@@ -37,10 +37,19 @@ while True:
     if select_function=="1":
         items=input_str_must("請輸入消費項目:")
         amount=input_number("請輸入金額:")
+        record={"項目":items ,"金額":amount}
+        consumption_records.append(record)
+        print("新增成功")
     elif select_function=="2":
-        print("")
+
+        print("""--- 消費明細 ---
+編號   項目    金額
+------------------------""")
+        for i,record in enumerate (consumption_records,1):
+            print(f"{i} {items:>10} {amount:>10}")
     elif select_function=="3":
-        print("")
+        print("消費筆數:")
+
     elif select_function=="4":
         print("系統已退出。")
         break
